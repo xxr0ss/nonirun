@@ -17,7 +17,7 @@ device = frida.get_usb_device()
 
 unirun = None
 for app in device.enumerate_applications():
-    if app.name == 'UNIRUN':
+    if app.pid != 0 and app.name == 'UNIRUN':
         unirun = app
         break
 if unirun:
